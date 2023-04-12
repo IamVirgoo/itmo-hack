@@ -1,12 +1,22 @@
-import { Link } from "react-router-dom";
+import Header from "../components/header";
 
 export default function IndexPage() {
     return <main>
-        <div>
-            <div>
-                <h1>Hello 👋</h1>
-                <Link to={"/app/"}>go to app</Link>
+        <Header/>
+        <section className={'hero'}>
+            <div className={'hero--container'}>
+
             </div>
-        </div>
+        </section>
+        <section className={'selected'}>
+            <div className={'selected--container'}>
+
+            </div>
+        </section>
+        <section className={'catalog'}>
+            <div className={'catalog--container'}>
+
+            </div>
+        </section>
     </main>
 }
