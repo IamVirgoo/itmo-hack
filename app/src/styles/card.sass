@@ -1,0 +1,44 @@
+@import '../global'
+
+.main-card
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  background-color: #FFFF
+  padding: 30px
+  gap: 100px
+  border-radius: 10px
+  box-shadow: 0 2px 2px rgba(0, 32, 51, 0.02), 0 2px 8px rgba(0, 32, 51, 0.16)
+  &--state-wrapper
+    position: relative
+    width: 150px
+    height: 150px
+    margin-left: 100px
+  &--content
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 35px
+    &--heading
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      gap: 10px
+      &--title
+        font-size: 32px
+        color: $primary-text-color
+      &--info
+        font-size: 14px
+        color: $main-text-color
+      &--description
+        font-size: 16px
+        color: $primary-text-color
+    &--buttons
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &--main-button
+        color: #ffff
+        background-color: $main-color
+        padding: 10px 20px
+        border-radius: 5px

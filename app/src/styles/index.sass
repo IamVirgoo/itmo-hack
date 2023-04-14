@@ -3,3 +3,13 @@
 @mixin container
   max-width: 1440px
   margin: 0 auto
+
+.hero
+  padding-top: 100px
+  &--container
+    @include container
+    &--title
+      font-size: 24px
+      font-weight: 400
+      color: $primary-text-color
+      padding-bottom: 25px
