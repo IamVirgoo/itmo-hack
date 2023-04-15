@@ -1,29 +1,38 @@
 @import '../global'
 
+@mixin card
+  background-color: #FFFF
+  padding: 30px
+  border-radius: 10px
+  box-shadow: 0 2px 2px rgba(0, 32, 51, 0.02), 0 2px 8px rgba(0, 32, 51, 0.16)
+
+@mixin cardContent
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 35px
+
+@mixin cardHeading
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 10px
+
 .main-card
+  @include card
   display: flex
   justify-content: flex-start
   align-items: center
-  background-color: #FFFF
-  padding: 30px
   gap: 100px
-  border-radius: 10px
-  box-shadow: 0 2px 2px rgba(0, 32, 51, 0.02), 0 2px 8px rgba(0, 32, 51, 0.16)
   &--state-wrapper
     position: relative
     width: 150px
     height: 150px
     margin-left: 100px
   &--content
-    display: flex
-    flex-direction: column
-    align-items: flex-start
-    gap: 35px
+    @include cardContent
     &--heading
-      display: flex
-      flex-direction: column
-      align-items: flex-start
-      gap: 10px
+      @include cardHeading
       &--title
         font-size: 32px
         color: $primary-text-color
@@ -42,3 +51,51 @@
         background-color: $main-color
         padding: 10px 20px
         border-radius: 5px
+.card
+  @include card
+  width: 403px
+  &--content
+    @include cardContent
+    &--heading
+      @include cardHeading
+      &--title
+        font-size: 24px
+        color: $primary-text-color
+      &--info
+        font-size: 14px
+        color: $main-text-color
+      &--description
+        font-size: 14px
+        line-height: 150%
+        color: $primary-text-color
+    &--buttons
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &--main-button
+        color: #ffff
+        background-color: $main-color
+        padding: 10px 20px
+        border-radius: 5px
+        &__done
+          display: flex
+          align-items: center
+          gap: 15px
+          color: $main-color
+          border: 1px solid $main-color
+          padding: 10px 20px
+          border-radius: 5px
+      &--state
+        display: flex
+        align-items: center
+        gap: 10px
+        &--bar
+          width: 24px
+          height: 24px
+        p
+          font-size: 14px
+          color: $main-text-color
+        span
+          font-size: 14px
+          color: $primary-text-color

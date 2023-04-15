@@ -34,3 +34,33 @@
         &--link
           color: rgba(0, 57, 92, 0.8)
           font-size: 14px
+.catalog
+  padding: 50px 0 100px 0
+  &--container
+    @include container
+    &--title
+      font-size: 24px
+      font-weight: 400
+      color: $primary-text-color
+      padding-bottom: 25px
+    &--choose
+      width: 650px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      border: 1px solid rgba(0, 66, 105, 0.28)
+      border-radius: 5px
+      &--path
+        padding: 10px 20px
+        transition: 200ms ease-in
+        cursor: pointer
+        border-radius: 5px
+      &--path:hover
+        background-color: rgba(0, 66, 105, 0.07)
+        color: rgba(0, 57, 92, 0.8)
+    &--content
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      gap: 25px
+      padding-top: 25px
