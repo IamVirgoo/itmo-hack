@@ -6,6 +6,9 @@ $main-color: rgba(0, 120, 210, 1)
 $main-text-color: rgba(0, 32, 51, 0.6)
 $primary-text-color: rgba(0, 32, 51, 1)
 
+html
+  scroll-behavior: smooth
+
 body
   margin: 0
   padding: 0
@@ -37,3 +40,32 @@ a
   src: url("./assets/fonts/segoe/Segoe UI Bold.ttf") format("truetype")
   font-style: normal
   font-weight: normal
+
+.slider
+  position: relative
+  padding: 25px 0 20px 0
+  overflow-x: hidden
+  overflow-y: auto
+
+.slider-path
+  margin-left: 25px
+
+.previous
+  background-color: rgba(0, 66, 105, 0.07)
+  width: 32px
+  height: 32px
+  border-radius: 16px
+  border: none
+  position: absolute
+  top: 30px
+  right: 42px
+
+.next
+  background-color: rgba(0, 66, 105, 0.07)
+  width: 32px
+  height: 32px
+  border-radius: 16px
+  border: none
+  position: absolute
+  top: 30px
+  right: 0

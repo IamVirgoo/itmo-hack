@@ -34,6 +34,29 @@
         &--link
           color: rgba(0, 57, 92, 0.8)
           font-size: 14px
+.carousel
+  padding-top: 40px
+  &--container
+    @include container
+    max-width: 1370px
+    background-color: rgba(0, 32, 51, 0.05)
+    border-radius: 10px
+    padding: 35px
+    &--heading
+      display: flex
+      align-items: center
+      gap: 35px
+      &--title
+        font-size: 24px
+        font-weight: 400
+        color: $primary-text-color
+      &--button
+        padding: 10px 20px
+        background-color: rgba(0, 66, 105, 0.07)
+        color: rgba(0, 57, 92, 0.8)
+        border-radius: 5px
+        cursor: pointer
+        user-select: none
 .catalog
   padding: 50px 0 100px 0
   &--container

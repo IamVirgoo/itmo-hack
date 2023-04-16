@@ -1,6 +1,14 @@
 const data = [
     {
         cardType : "",
+        title : "Добро пожаловать!",
+        info : "Для новичка • Основы работы",
+        description : "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+        cardProgressType : "done",
+        number_value : 10
+    },
+    {
+        cardType : "",
         title : "Начало работы",
         info : "Для новичка • Основы работы",
         description : "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
@@ -38,14 +46,6 @@ const data = [
         description : "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
         cardProgressType : "not started",
         number_value : 255
-    },
-    {
-        cardType : "",
-        title : "Введение в рабочую среду ",
-        info : "Профессионалу • Библиотеки",
-        description : "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
-        cardProgressType : "not started",
-        number_value : 10
     }
 ]
 

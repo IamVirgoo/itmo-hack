@@ -7,8 +7,18 @@ import Header from "../components/header";
 
 import arrow from '../assets/arrow.svg'
 
+import Flickity from "react-flickity-component";
+
 export default function IndexPage() {
+    const flickityOptions = {
+        freeScroll: true,
+        contain: true,
+// disable previous & next buttons and dots
+        prevNextButtons: false,
+        pageDots: false,
+    }
     const [choice, setChoice] = useState<string>("all")
+    const [isHidden, setIsHidden] = useState<string>("Скрыть пройденные")
     return <main>
         <Header/>
         <section className={'hero'}>
@@ -17,7 +27,7 @@ export default function IndexPage() {
                 <Card type={'main'} number_value={0.8}/>
                 <div className={'hero--container--separator'}>
                     <div className={'line'}></div>
-                    <a href={'#'} className={'hero--container--separator--button'}>
+                    <a href={'#carousel'} className={'hero--container--separator--button'}>
                         <p className={'hero--container--separator--button--link'}>Показать ещё</p>
                         <img src={arrow} alt=""/>
                     </a>
@@ -25,8 +35,35 @@ export default function IndexPage() {
                 </div>
             </div>
         </section>
-        <section className={'selected'}>
-            <div className={'selected--container'}>
+        <section className={'carousel'} id={'carousel'}>
+            <div className={'carousel--container'}>
+                <div className={'carousel--container--heading'}>
+                    <h1 className={'carousel--container--heading--title'}>Путь Front End Developer</h1>
+                    <p className={'carousel--container--heading--button'} onClick={() => {
+                        if (isHidden == "Скрыть пройденные") setIsHidden("Показать все")
+                        else setIsHidden("Скрыть пройденные")
+                    }}>{isHidden}</p>
+                </div>
+                <div className={'next'} style={{height: '32px', width: '32px', backgroundColor: "#FFFFF"}}></div>
+                <Flickity
+                    className={'slider'} // default ''
+                    elementType={'div'} // default 'div'
+                    disableImagesLoaded={false} // default false
+                    options={flickityOptions}
+                    reloadOnUpdate // default false
+                    static // default false
+                >
+                    { data.map((value) =>
+                        <div className={'slider-path'}><Card
+                            type={value.cardType}
+                            title={value.title}
+                            info={value.info}
+                            description={value.description}
+                            cardProgressType={value.cardProgressType}
+                            number_value={value.number_value}
+                        /></div>)
+                    }
+                </Flickity>
             </div>
         </section>
         <section className={'catalog'}>
