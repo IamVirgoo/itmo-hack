@@ -54,14 +54,31 @@ export default function IndexPage() {
                     static // default false
                 >
                     { data.map((value) =>
-                        <div className={'slider-path'}><Card
-                            type={value.cardType}
-                            title={value.title}
-                            info={value.info}
-                            description={value.description}
-                            cardProgressType={value.cardProgressType}
-                            number_value={value.number_value}
-                        /></div>)
+                        <div className={'slider-path'}>
+                            { isHidden == "Скрыть пройденные"
+                                ? <Card
+                                    type={value.cardType}
+                                    title={value.title}
+                                    info={value.info}
+                                    description={value.description}
+                                    cardProgressType={value.cardProgressType}
+                                    number_value={value.number_value}
+                                />
+                                : <>
+                                    { value.cardProgressType != 'done'
+                                        ? <Card
+                                            type={value.cardType}
+                                            title={value.title}
+                                            info={value.info}
+                                            description={value.description}
+                                            cardProgressType={value.cardProgressType}
+                                            number_value={value.number_value}
+                                        />
+                                        : <></>
+                                    }
+                                </>
+                            }
+                        </div>)
                     }
                 </Flickity>
             </div>

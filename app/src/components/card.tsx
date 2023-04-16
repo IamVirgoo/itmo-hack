@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CircularProgressbar } from "react-circular-progressbar";
+import { CircularProgressbar, CircularProgressbarWithChildren } from "react-circular-progressbar";
 
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -12,21 +12,20 @@ export default function Card(props : any) {
             ? <>
                 <div className={'main-card'}>
                     <div className={'main-card--state-wrapper'}>
-                        <CircularProgressbar
+                        <CircularProgressbarWithChildren
                             value={props.number_value}
                             maxValue={1}
-                            text={`${props.number_value * 10} / 10`}
                             styles={{
-                                root: {},
+                                root : {},
                                 path: {
                                     stroke : 'rgba(36, 195, 142, 1)'
                                 },
-                                text: {
-                                    fill : 'rgba(0, 32, 51, 1)',
-                                    fontSize : '24px'
-                                }
                             }}
-                        />
+                        >
+                            <p className={'main-card--state-wrapper--bar-text'}>
+                                {props.number_value * 10} / 10 <br/> <span>заданий</span>
+                            </p>
+                        </CircularProgressbarWithChildren>
                     </div>
                     <div className={'main-card--content'}>
                         <div className={'main-card--content--heading'}>
