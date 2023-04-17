@@ -87,3 +87,41 @@
       flex-wrap: wrap
       gap: 25px
       padding-top: 25px
+.welcome
+  padding-top: 100px
+  &--container
+    @include container
+    &--title
+      font-size: 64px
+      letter-spacing: 0.1em
+    &--content
+      width: 320px
+      padding-top: 100px
+      display: flex
+      flex-direction: column
+      gap: 25px
+      &--form
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 30px
+        &__username
+          width: 100%
+          height: 20px
+          padding: 15px
+          font-size: 20px
+          border-radius: 15px
+          letter-spacing: 0.1em
+          border: none
+      &--button
+        width: 100%
+        font-size: 20px
+        background-color: #FFFF
+        border-radius: 15px
+        color: $main-text-color
+        padding: 15px
+        letter-spacing: 0.1em
+        transition: 200ms ease-in
+      &--button:hover
+        box-shadow: 0 0 10px $main-color
+        color: $main-color

@@ -5,7 +5,7 @@ import question from '../assets/queshtion.svg';
 import sun from '../assets/sun.svg';
 import image from '../assets/image.png'
 
-export default function Header() {
+export default function Header(props : any) {
     return <header className={'header'}>
         <div className={'header--container'}>
             <div className={'header--container__left'}>
@@ -29,7 +29,7 @@ export default function Header() {
                 </div>
                 <div className={'header--container__right--user'}>
                     <img className={'header--container__right--user--image'} src={image} alt=""/>
-                    <p className={'header--container__right--user--username'}>Михаил Романов</p>
+                    <p className={'header--container__right--user--username'}>{props.username || "Михаил Романов"}</p>
                 </div>
             </div>
         </div>

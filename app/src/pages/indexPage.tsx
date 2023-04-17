@@ -19,8 +19,8 @@ export default function IndexPage() {
     }
     const [choice, setChoice] = useState<string>("all")
     const [isHidden, setIsHidden] = useState<string>("Скрыть пройденные")
-    return <main>
-        <Header/>
+    if (localStorage.getItem('authenticated') == 'true') return <main>
+        <Header username={localStorage.getItem('username')}/>
         <section className={'hero'}>
             <div className={'hero--container'}>
                 <h1 className={'hero--container--title'}>Рекомендуемые темы</h1>
@@ -195,4 +195,7 @@ export default function IndexPage() {
             </div>
         </section>
     </main>
+    else return <>
+        {window.location.href='/welcome'}
+    </>
 }
