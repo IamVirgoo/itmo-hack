@@ -8,6 +8,9 @@ import Header from "../components/header";
 import arrow from '../assets/arrow.svg'
 
 import Flickity from "react-flickity-component";
+import { useSelector } from "react-redux";
+import { AppState } from "../stores/appStore";
+import {dataApi} from "../middlewares/dataMiddleware";
 
 export default function IndexPage() {
     const flickityOptions = {
@@ -17,10 +20,17 @@ export default function IndexPage() {
         prevNextButtons: false,
         pageDots: false,
     }
+
     const [choice, setChoice] = useState<string>("all")
     const [isHidden, setIsHidden] = useState<string>("Скрыть пройденные")
-    if (localStorage.getItem('authenticated') == 'true') return <main>
-        <Header username={localStorage.getItem('username')}/>
+
+    const USER = useSelector((state : AppState) => state.user)
+    const AUTH = useSelector((state : AppState) => state.user.auth)
+
+    const DATA = dataApi
+
+    if (AUTH) return <main>
+        <Header username={USER.name}/>
         <section className={'hero'}>
             <div className={'hero--container'}>
                 <h1 className={'hero--container--title'}>Рекомендуемые темы</h1>
