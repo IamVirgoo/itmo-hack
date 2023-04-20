@@ -1,11 +1,11 @@
-# About template
+# About project
 
-This template is made based on React.js, Vite, TypeScript and Redux (optionally).
+The project was created based on GPN Hack tasks. I this version implements thi first task, 
+redux integration for data management is also written.
 
 ## Usage
 
 ```bash
-$ cd app
 $ yarn install # or npm or pnpm install  
 ```
 ## Available Scripts
